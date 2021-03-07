@@ -89,7 +89,7 @@ public class SampleController implements Initializable {
 
         public void initializeEmployeeTableview() {
         name.setCellValueFactory(new PropertyValueFactory<Employee, String>("name"));
-        salary.setCellValueFactory(new PropertyValueFactory<Employee, String>("salary"));
+        salary.setCellValueFactory(new PropertyValueFactory<Employee, String>("personalBonus"));
         employeesList = FXCollections.observableList(sampleModel.getEmployees());
         employeeTableview.setItems(employeesList);
         employeeTableview.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -119,5 +119,14 @@ public class SampleController implements Initializable {
         sampleModel.deleteEmployee(employeeTableview.getSelectionModel().getSelectedItem());
         employeesList = FXCollections.observableList(sampleModel.getEmployees());
         employeeTableview.setItems(employeesList);
+    }
+
+    public void onIncrementPersonalBonus(ActionEvent actionEvent) {
+        sampleModel.updateEmployeePersonalBonus(employeeTableview.getItems().subList(0,employeeTableview.getItems().size()), 10);
+
+    }
+
+    public void onDecrementPersonalBonus(ActionEvent actionEvent) {
+        sampleModel.updateEmployeePersonalBonus(employeeTableview.getItems().subList(0,employeeTableview.getItems().size()), -10);
     }
 }

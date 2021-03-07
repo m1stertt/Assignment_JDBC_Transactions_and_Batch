@@ -21,6 +21,8 @@ public class SampleEditModalController {
     private TextField onLeaveTextfield;
     @FXML
     private TextField phoneNumberTextfield;
+    @FXML
+    private TextField salaryGroupIdTextfield;
 
     private SampleModel sampleModel = new SampleModel();
 
@@ -37,6 +39,7 @@ public class SampleEditModalController {
     salaryTextfield.setText(employee.getPersonalBonus());
     onLeaveTextfield.setText(String.valueOf( employee.getOnLeave()));
     phoneNumberTextfield.setText(employee.getPhoneNumber());
+    salaryGroupIdTextfield.setText(String.valueOf(employee.getSalaryGroupId()));
     setEditMode(true);
     setSelectedEmployee(employee);
     }
@@ -48,7 +51,7 @@ public class SampleEditModalController {
             window.close();
             return;
         }
-        sampleModel.insertEmployee(selectedEmployee);
+        sampleModel.insertEmployee(new Employee(nameTextfield.getText(), salaryTextfield.getText(), Integer.valueOf(onLeaveTextfield.getText()), phoneNumberTextfield.getText(), Integer.valueOf(salaryGroupIdTextfield.getText()), "", 0));
         Stage window = (Stage) cancelButton.getScene().getWindow();
         window.close();
     }
@@ -58,7 +61,7 @@ public class SampleEditModalController {
     }
 
     public void onSaveEdit(){
-        sampleModel.editEmployee(new Employee(selectedEmployee.getId(), nameTextfield.getText(), salaryTextfield.getText(), Integer.valueOf(onLeaveTextfield.getText()), phoneNumberTextfield.getText()));
+        sampleModel.editEmployee(new Employee(selectedEmployee.getId(), nameTextfield.getText(), salaryTextfield.getText(), Integer.valueOf(onLeaveTextfield.getText()), phoneNumberTextfield.getText(), Integer.valueOf(salaryGroupIdTextfield.getText()), "", 0));
     }
 
     public void onCancel(ActionEvent actionEvent) {

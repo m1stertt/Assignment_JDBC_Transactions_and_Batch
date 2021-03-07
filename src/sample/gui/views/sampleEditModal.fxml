@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.controllers.SampleEditModalController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gui.controllers.SampleEditModalController">
    <children>
       <TextField fx:id="nameTextfield" layoutX="142.0" layoutY="76.0" />
       <TextField fx:id="phoneNumberTextfield" layoutX="142.0" layoutY="181.0" />
@@ -17,5 +17,7 @@
       <Label layoutX="20.0" layoutY="185.0" text="PhoneNumber" />
       <Button fx:id="saveButton" layoutX="26.0" layoutY="355.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
       <Button fx:id="cancelButton" layoutX="98.0" layoutY="355.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+      <TextField fx:id="salaryGroupIdTextfield" layoutX="142.0" layoutY="215.0" />
+      <Label layoutX="20.0" layoutY="219.0" text="SalaryGroup" />
    </children>
 </AnchorPane>

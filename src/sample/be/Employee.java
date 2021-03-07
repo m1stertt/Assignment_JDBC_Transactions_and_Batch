@@ -7,16 +7,49 @@ public class Employee {
     private String personalBonus;
     private int onLeave;
     private String phoneNumber;
+    private int salaryGroupId;
+    private String groupName;
+    private double salary;
 
-    public Employee(int id, String name, String personalBonus, int onLeave, String phoneNumber) {
+    public Employee(int id, String name, String personalBonus, int onLeave, String phoneNumber, int salaryGroupId, String groupName, double salary) {
         this.id = id;
         this.name = name;
         this.personalBonus = personalBonus;
         this.onLeave = onLeave;
         this.phoneNumber = phoneNumber;
+        this.salaryGroupId = salaryGroupId;
+    }
+    public Employee(String name, String personalBonus, int onLeave, String phoneNumber, int salaryGroupId, String groupName, double salary) {
+        this.name = name;
+        this.personalBonus = personalBonus;
+        this.onLeave = onLeave;
+        this.phoneNumber = phoneNumber;
+        this.salaryGroupId = salaryGroupId;
     }
 
+    public int getSalaryGroupId() {
+        return salaryGroupId;
+    }
 
+    public void setSalaryGroupId(int salaryGroupId) {
+        this.salaryGroupId = salaryGroupId;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
     public int getId() {
         return id;
     }

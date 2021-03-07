@@ -29,4 +29,8 @@ public class SampleModel {
     public void editEmployee(Employee selectedEmployee) {
         sampleManager.editEmployee(selectedEmployee);
     }
+
+    public void updateEmployeePersonalBonus(List<Employee> items, double changeBy) {
+        sampleManager.updateEmployeePersonalBonus(items, changeBy);
+    }
 }

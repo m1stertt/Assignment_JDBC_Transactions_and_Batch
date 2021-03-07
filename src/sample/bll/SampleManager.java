@@ -29,4 +29,8 @@ public class SampleManager {
     public void editEmployee(Employee selectedEmployee) {
         sampleDBDAO.editEmployee(selectedEmployee);
     }
+
+    public void updateEmployeePersonalBonus(List<Employee> items, double changeBy) {
+        sampleDBDAO.updateEmployeePersonalBonus(items, changeBy);
+    }
 }
